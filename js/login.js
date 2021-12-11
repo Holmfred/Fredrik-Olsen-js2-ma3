@@ -8,7 +8,7 @@ const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 const message = document.querySelector(".message-container");
 
-form.addEventListener("submit", submitForm)
+form.addEventListener("submit", submitForm);
 
 function submitForm(event) {
     event.preventDefault();
@@ -18,21 +18,22 @@ function submitForm(event) {
     const usernameValue = username.value.trim();
     const passwordValue = password.value.trim();
 
-    if(usernameValue.lenght === 0 || passwordValue.lenght === 0) {
-        return displayMessage("warning", "Invalid values", ".message-container")
+    if (usernameValue.length === 0 || passwordValue.length === 0) {
+        return displayMessage("warning", "Invalid values", ".message-container");
     }
-    
-    doLogin(usernameValue, passwordValue)
+
+    doLogin(usernameValue, passwordValue);
 }
 
-function doLogin(username, password) {
+
+async function doLogin(username, password) {
     const url = baseUrl + "auth/local";
 
-    const data = JSON.stringify({ identifier: username, password: password});
+    const data = JSON.stringify({ identifier: username, password: password });
 
     const options = {
         method: "POST",
-        body : data,
+        body: data,
         headers: {
             "Content-Type": "application/json",
         },
