@@ -13,7 +13,7 @@ form.addEventListener("submit", submitForm)
 function submitForm(event) {
     event.preventDefault();
 
-    message.innerHTML = ""
+    message.innerHTML = "";
 
     const usernameValue = username.value.trim();
     const passwordValue = password.value.trim();
